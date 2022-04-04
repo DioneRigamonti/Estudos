@@ -1,4 +1,4 @@
-#treinando funções
+# Python - Treinando funções
 
 from time import sleep
 
