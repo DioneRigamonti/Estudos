@@ -1,2 +1,3 @@
 # Estudos
-Repositório destinado a prática de exercícios 
+Repositório destinado a prática de estudos/exercícios.
+
