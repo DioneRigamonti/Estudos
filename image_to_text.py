@@ -1,12 +1,16 @@
 from pytesseract import pytesseract
 from PIL import Image
 
+# instale a biblioteca Pillow = pip install Pillow
+# instale a biblioteca tesseract = pip install tesseract
 #site tesseract.exe: https://github.com/UB-Mannheim/tesseract/wiki 
+#quando for instalar o .exe do tesseract...incluir a linguagem portugues para ler o ''Ç''
 
-path_to_tesseract = r"PATH\TESSERACT.EXE"
-image_path = r"IMAGE PATH"
-img = Image.open(image_path) 
-pytesseract.tesseract_cmd = path_to_tesseract 
+caminho_tesseract_exe = r"caminho__tesseract_instalado\TESSERACT.EXE"
+caminho_imagem = r"caminho_imagem"
+abrir_imagem = Image.open(caminho_imagem) 
+pytesseract.tesseract_cmd = caminho_tesseract_exe 
   
-text = pytesseract.image_to_string(img) 
-print(text[:-1])
+texto = pytesseract.image_to_string(abrir_imagem,lang='por') 
+
+print(texto)
