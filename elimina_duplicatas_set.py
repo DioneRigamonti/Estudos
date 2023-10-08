@@ -1,5 +1,5 @@
-arquivo_entrada = r"C:\Users\rigam\OneDrive\Área de Trabalho\teste\Contoso - Promocoes.csv"
-arquivo_saida = r"C:\Users\rigam\OneDrive\Área de Trabalho\teste\Contoso - Promocoes_sem_duplicatas_ordenado.csv"
+arquivo_entrada = r"C:\Users\teste\Contoso - Promocoes.csv"
+arquivo_saida = r"C:\Users\teste\Contoso - Promocoes_sem_duplicatas_ordenado.csv"
 
 # Lista para armazenar o cabeçalho
 cabecalho = ""
@@ -11,7 +11,7 @@ linhas_unicas = []
 with open(arquivo_entrada, 'r', encoding='utf-8-sig') as arq_entrada:
     cabecalho = arq_entrada.readline()
 
-# Le o restante do arquivo e adicione as linhas únicas à lista
+# Le o restante do arquivo e adiciona as linhas únicas à lista
 with open(arquivo_entrada, 'r', encoding='utf-8-sig') as arq_entrada:
     # Pula o cabeçalho ao iterar pelas linhas
     next(arq_entrada)
