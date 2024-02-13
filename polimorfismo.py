@@ -31,3 +31,40 @@ print(obj2.falar())  # Saída: MIAU MIAU
 
 obj3 = Teste('abc')
 print(obj3.falar())  # Saída: Animal não reconhecido
+
+
+#------------ outro exemplo, com decorators
+
+class Pessoa:
+    def __init__(self,nome) -> None:
+        self.nome = nome
+        self._idade = 0
+
+    def profissao(self,acao:str):
+        return f'{self.nome} trabalha com {acao}'
+    
+    @property
+    def idade(self):
+        return self._idade
+    
+    @idade.setter
+    def idade(self,valor):
+        if valor >= 18:
+            self._idade = valor
+            print('Vc é maior de idade') 
+        
+        else:
+            print('Menor de idade')
+    
+class Acao(Pessoa):
+    def __init__(self, nome,cor) -> None:
+        super().__init__(nome)        
+        self.cor = cor
+
+    def profissao(self, acao):
+        return super().profissao(acao)  
+
+obj = Acao(nome='Dione',cor='Branco')
+obj.idade = 30
+print(obj.profissao(acao='TI')) # Dione trabalha com TI
+print(obj.idade) # Vc é maior de idade 30
